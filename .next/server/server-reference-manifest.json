@@ -1,0 +1,14 @@
+{
+  "node": {
+    "01526d53db0e118bf288d87edafedb70b8097d7c": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Ftimohaseloff%2Fportfolio-1%2Fapp%2Factions.ts%22%2C%5B%22sendContactEmail%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "usp5MZhiSx+2NfJXqFV1Fxxql0200ueuwxqGxk1im/4="
+}
