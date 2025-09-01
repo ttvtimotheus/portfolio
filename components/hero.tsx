@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Zap } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -13,83 +13,111 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 animate-grid opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
+      {/* Subtle Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.03),transparent_50%)]" />
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 p-3 rounded-full bg-primary/10 animate-grid-move">
-        <Code className="h-6 w-6 text-primary" />
-      </div>
-      <div className="absolute top-40 right-20 p-3 rounded-full bg-primary/10 animate-grid-move delay-1000">
-        <Zap className="h-6 w-6 text-primary" />
-      </div>
-      <div className="absolute bottom-40 left-20 p-3 rounded-full bg-primary/10 animate-grid-move delay-2000">
-        <ArrowRight className="h-6 w-6 text-primary" />
-      </div>
+      <div className="container relative z-10 mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                <span className="block text-gray-900">Timo Haseloff</span>
+                <span className="block text-gray-600 text-4xl lg:text-5xl mt-2">
+                  Web & Software Development
+                </span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
+                Moderne Webseiten und Apps für kleine Unternehmen und Startups. 
+                Schnell, sauber, zuverlässig.
+              </p>
+            </div>
 
-      <div className="container relative z-10 mx-auto px-4 py-32">
-        <div className="flex flex-col items-center text-center space-y-8 animate-fade-up">
-          <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block">Timo Haseloff</span>
-              <span className="block text-primary mt-2">Web und Software</span>
-              <span className="block">Development</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Moderne Webseiten und Apps für kleine Unternehmen und Startups
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-8">
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('kontakt')}
-              className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Projekt anfragen
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('portfolio')}
-              className="text-lg px-8 py-6 rounded-full border-2 hover:bg-primary/5 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Portfolio ansehen
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                onClick={() => scrollToSection('kontakt')}
+                className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 transition-colors"
+              >
+                Projekt starten
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection('portfolio')}
+                className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50 transition-colors"
+              >
+                Portfolio ansehen
+              </Button>
+            </div>
           </div>
 
           {/* Device Mockup */}
-          <div className="relative mt-16 max-w-2xl mx-auto">
-            <div className="relative bg-card border rounded-2xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
-              <div className="bg-muted h-8 flex items-center px-4 space-x-2">
-                <div className="flex space-x-1">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
+          <div className="relative">
+            <div className="relative bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+              {/* Browser Header */}
+              <div className="bg-gray-100 h-10 flex items-center px-4 space-x-2 border-b border-gray-200">
+                <div className="flex space-x-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
                 </div>
-                <div className="flex-1 text-center text-xs text-muted-foreground">
-                  timo-haseloff.de
+                <div className="flex-1 text-center">
+                  <div className="bg-white rounded px-3 py-1 text-xs text-gray-500 max-w-xs mx-auto">
+                    beispiel-projekt.de
+                  </div>
                 </div>
               </div>
-              <div className="p-8 bg-gradient-to-br from-primary/5 to-transparent">
-                <div className="space-y-4">
-                  <div className="h-4 bg-primary/20 rounded w-3/4" />
-                  <div className="h-4 bg-muted rounded w-1/2" />
-                  <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="h-24 bg-card border rounded-lg" />
-                    <div className="h-24 bg-card border rounded-lg" />
+              
+              {/* Website Content */}
+              <div className="p-8 bg-gradient-to-br from-white to-gray-50 min-h-[300px]">
+                <div className="space-y-6">
+                  {/* Header */}
+                  <div className="flex justify-between items-center">
+                    <div className="h-8 bg-blue-600 rounded w-32" />
+                    <div className="flex space-x-2">
+                      <div className="h-6 bg-gray-200 rounded w-16" />
+                      <div className="h-6 bg-gray-200 rounded w-16" />
+                    </div>
                   </div>
-                  <div className="flex space-x-2 mt-6">
-                    <div className="h-8 bg-primary/30 rounded w-24" />
-                    <div className="h-8 bg-muted rounded w-20" />
+                  
+                  {/* Hero Content */}
+                  <div className="space-y-4">
+                    <div className="h-6 bg-gray-800 rounded w-4/5" />
+                    <div className="h-4 bg-gray-400 rounded w-3/5" />
+                    <div className="h-4 bg-gray-400 rounded w-2/3" />
+                  </div>
+                  
+                  {/* Cards */}
+                  <div className="grid grid-cols-2 gap-4 mt-8">
+                    <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
+                      <div className="h-3 bg-gray-300 rounded w-3/4" />
+                      <div className="h-2 bg-gray-200 rounded w-full" />
+                      <div className="h-2 bg-gray-200 rounded w-2/3" />
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
+                      <div className="h-3 bg-gray-300 rounded w-3/4" />
+                      <div className="h-2 bg-gray-200 rounded w-full" />
+                      <div className="h-2 bg-gray-200 rounded w-2/3" />
+                    </div>
+                  </div>
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex space-x-3 mt-6">
+                    <div className="h-8 bg-blue-600 rounded w-24" />
+                    <div className="h-8 bg-gray-200 rounded w-20" />
                   </div>
                 </div>
               </div>
             </div>
+            
+            {/* Subtle glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-100/0 via-blue-100/50 to-blue-100/0 rounded-3xl -z-10 blur-xl opacity-60" />
           </div>
         </div>
       </div>

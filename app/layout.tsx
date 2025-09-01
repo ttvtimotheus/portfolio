@@ -7,11 +7,8 @@ import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Timo Haseloff - Web und Software Development',
-    template: '%s | Timo Haseloff'
-  },
-  description: 'Moderne Webseiten und Apps für kleine Unternehmen und Startups. Spezialisiert auf Next.js, React und performante Lösungen.',
+  title: "timo haseloff – web & software development",
+  description: "Spezialisiert auf moderne Webanwendungen mit Next.js, React und Tailwind CSS. Schnelle Lieferung, sauberer Code für kleine Unternehmen und Startups.",
   keywords: ['Webentwicklung', 'Next.js', 'React', 'Webseiten', 'Apps', 'Software Development'],
   authors: [{ name: 'Timo Haseloff' }],
   creator: 'Timo Haseloff',
@@ -89,7 +86,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "min-h-screen bg-background antialiased")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

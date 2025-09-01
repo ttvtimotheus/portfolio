@@ -4,49 +4,35 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Section } from "@/components/section"
-import { ExternalLink, Globe } from "lucide-react"
+import { ArrowRight, ExternalLink, Globe } from "lucide-react"
 
 export function Portfolio() {
-  const projects = [
+  const featuredProjects = [
     {
       title: "Friseursalon Haarwerk",
-      description: "Moderne Website für einen lokalen Friseursalon mit Online-Terminbuchung und Galerie",
-      tech: ["Next.js", "Tailwind", "Booking System"],
+      description: "Moderne Website mit Online-Terminbuchung und Galerie",
+      tech: ["Next.js", "Booking"],
       link: "/demo/haarwerk",
-      category: "Business Website"
+      category: "Business"
     },
     {
       title: "Café Kaffeekränzchen", 
-      description: "Gemütliche Website für ein lokales Café mit Speisekarte und Events",
-      tech: ["React", "CMS", "Events"],
+      description: "Gemütliche Website mit Speisekarte und Events",
+      tech: ["React", "CMS"],
       link: "/demo/kaffeekraenzchen",
       category: "Gastronomie"
     },
     {
-      title: "Elektro Strompunkt",
-      description: "Professionelle Präsenz für Elektroinstallationen mit Service-Übersicht",
-      tech: ["Next.js", "SEO", "Contact Forms"],
-      link: "/demo/strompunkt", 
-      category: "Handwerk"
-    },
-    {
       title: "Fotograf Lichtblick",
-      description: "Portfolio-Website für einen Fotografen mit Bildergalerie und Buchungssystem",
-      tech: ["Gallery", "Lightbox", "Booking"],
+      description: "Portfolio-Website mit Bildergalerie und Buchung",
+      tech: ["Gallery", "Booking"],
       link: "/demo/lichtblick",
       category: "Kreativ"
     },
     {
-      title: "Immobilien UrbanHome",
-      description: "Immobilien-Plattform mit Suchfunktion und Objektverwaltung",
-      tech: ["Database", "Search", "CRM"],
-      link: "/demo/urbanhome",
-      category: "Immobilien"
-    },
-    {
       title: "SaaS Landing Taskly",
-      description: "Moderne Landing Page für eine Produktivitäts-App mit Pricing und Features",
-      tech: ["SaaS", "Pricing", "Analytics"],
+      description: "Landing Page mit Pricing und Feature-Übersicht",
+      tech: ["SaaS", "Pricing"],
       link: "/demo/taskly",
       category: "SaaS"
     }
@@ -56,55 +42,79 @@ export function Portfolio() {
     <Section 
       id="portfolio"
       title="Portfolio"
-      subtitle="Erfolgreiche Projekte für verschiedene Branchen"
-      dark
+      subtitle="Ausgewählte Projekte für verschiedene Branchen"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
+      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {featuredProjects.map((project) => (
           <Card 
             key={project.title}
-            className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-background"
+            className="group relative overflow-hidden border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
           >
-            <CardHeader>
-              <div className="flex items-start justify-between mb-2">
-                <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">
-                  {project.category}
-                </span>
-                <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-gray-50">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center space-y-2">
+                  <div className="w-16 h-16 mx-auto rounded-lg bg-blue-100 flex items-center justify-center">
+                    <Globe className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <p className="text-sm text-gray-500">Demo Screenshot</p>
+                </div>
               </div>
-              <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                {project.title}
-              </CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                {project.description}
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent className="space-y-4">
-              <div className="flex flex-wrap gap-1">
-                {project.tech.map((tech) => (
-                  <span 
-                    key={tech}
-                    className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <Link href={project.link} className="block">
+            </div>
+            
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md">
+                      {project.category}
+                    </span>
+                    <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                  </div>
+                  <h3 className="font-semibold text-lg text-gray-900">{project.title}</h3>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap gap-1">
+                  {project.tech.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
                 <Button 
-                  variant="ghost" 
-                  size="sm"
-                  className="w-full group-hover:bg-primary/10 transition-colors"
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full border-gray-300 hover:bg-gray-50 text-gray-700"
+                  asChild
                 >
-                  Demo ansehen
-                  <ExternalLink className="ml-2 h-3 w-3" />
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    Demo ansehen
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
-              </Link>
+              </div>
             </CardContent>
           </Card>
         ))}
+      </div>
+      
+      <div className="text-center mt-12">
+        <Link href="/portfolio">
+          <Button 
+            variant="outline"
+            size="lg"
+            className="px-8 py-3 border-gray-300 hover:bg-gray-50 transition-colors"
+          >
+            Alle Projekte ansehen
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
       </div>
     </Section>
   )

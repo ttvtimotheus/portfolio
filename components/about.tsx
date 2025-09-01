@@ -1,6 +1,5 @@
-import { Badge } from "@/components/ui/badge"
-import { Section } from "@/components/section"
 import { Code2, Rocket, Target } from "lucide-react"
+import { Section } from "./section"
 
 export function About() {
   const techStack = [
@@ -24,42 +23,42 @@ export function About() {
             <span className="text-primary font-medium"> schneller Lieferung</span> zum digitalen Erfolg zu führen.
           </p>
 
-          <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+          <div className="flex items-center space-x-4 text-sm text-gray-600">
             <div className="flex items-center space-x-2">
-              <Code2 className="h-4 w-4 text-primary" />
+              <Code2 className="h-4 w-4 text-blue-600" />
               <span>Sauberer Code</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Rocket className="h-4 w-4 text-primary" />
+              <Rocket className="h-4 w-4 text-blue-600" />
               <span>Schnelle Lieferung</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Target className="h-4 w-4 text-primary" />
+              <Target className="h-4 w-4 text-blue-600" />
               <span>Zielorientiert</span>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h3 className="font-semibold text-lg">Tech Stack</h3>
+            <h3 className="font-semibold text-lg text-gray-900">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
-                <Badge key={tech} variant="secondary" className="px-3 py-1">
+                <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-md">
                   {tech}
-                </Badge>
+                </span>
               ))}
             </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border p-8 flex items-center justify-center">
+          <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-50 to-gray-50 border border-gray-200 p-8 flex items-center justify-center">
             <div className="text-center space-y-4">
-              <div className="w-24 h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                <Code2 className="h-12 w-12 text-primary" />
+              <div className="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center">
+                <Code2 className="h-12 w-12 text-blue-600" />
               </div>
               <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Fokus auf Qualität</h4>
-                <p className="text-sm text-muted-foreground max-w-xs">
+                <h4 className="font-semibold text-lg text-gray-900">Fokus auf Qualität</h4>
+                <p className="text-sm text-gray-600 max-w-xs">
                   Jedes Projekt wird mit Liebe zum Detail und modernsten Standards entwickelt
                 </p>
               </div>

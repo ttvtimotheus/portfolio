@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Section } from "@/components/section"
-import { Check, ArrowRight } from "lucide-react"
+import { Check, ArrowRight, Globe, ShoppingCart, Zap } from "lucide-react"
 
 export function Services() {
   const scrollToSection = (sectionId: string) => {
@@ -21,10 +21,7 @@ export function Services() {
       features: [
         "Onepager Design",
         "Vollresponsiv",
-        "Kontaktformular",
-        "Basis SEO",
-        "Mobile optimiert",
-        "SSL Zertifikat"
+        "Kontaktformular"
       ],
       popular: false
     },
@@ -35,11 +32,7 @@ export function Services() {
       features: [
         "Mehrere Seiten",
         "Headless CMS",
-        "Performance Optimierung",
-        "Erweiterte SEO",
-        "Analytics Setup",
-        "Content Management",
-        "Blog Funktion"
+        "Performance Optimierung"
       ],
       popular: true
     },
@@ -48,12 +41,8 @@ export function Services() {
       price: "ab 2000€",
       description: "Maßgeschneiderte Lösungen für komplexe Anforderungen",
       features: [
-        "Individuelle Funktionen",
         "E-Commerce/Shop",
-        "Booking System",
-        "Mehrsprachigkeit", 
         "API Integration",
-        "Custom Dashboard",
         "Wartung & Support"
       ],
       popular: false
@@ -66,49 +55,54 @@ export function Services() {
       title="Leistungen"
       subtitle="Transparente Pakete für jeden Bedarf"
     >
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {packages.map((pkg) => (
-          <Card 
-            key={pkg.name}
-            className={`relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-              pkg.popular ? 'border-primary shadow-md scale-105' : ''
-            }`}
-          >
-            {pkg.popular && (
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                  Beliebt
-                </span>
-              </div>
-            )}
-            
-            <CardHeader className="text-center pb-4">
-              <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
-              <div className="text-3xl font-bold text-primary mb-2">{pkg.price}</div>
-              <CardDescription className="text-sm">{pkg.description}</CardDescription>
-            </CardHeader>
-            
-            <CardContent className="space-y-3">
-              {pkg.features.map((feature) => (
-                <div key={feature} className="flex items-center space-x-3">
-                  <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                  <span className="text-sm">{feature}</span>
+      <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {packages.map((pkg, index) => {
+          const icons = [Globe, Zap, ShoppingCart]
+          const Icon = icons[index]
+          
+          return (
+            <Card 
+              key={pkg.name}
+              className="relative overflow-hidden border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
+            >
+              <CardHeader className="text-center pb-2 px-8 pt-8">
+                <div className="mx-auto w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  <Icon className="h-6 w-6 text-blue-600" />
                 </div>
-              ))}
-            </CardContent>
-            
-            <CardFooter>
-              <Button 
-                onClick={() => scrollToSection('kontakt')}
-                className="w-full"
-                variant={pkg.popular ? "default" : "outline"}
-              >
-                Projekt anfragen
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+                <CardTitle className="text-xl text-gray-900">{pkg.name}</CardTitle>
+                <p className="text-sm text-gray-600 mt-2">{pkg.description}</p>
+              </CardHeader>
+              <CardContent className="pt-0 pb-8 px-8">
+                <div className="text-center mb-8">
+                  <span className="text-3xl font-bold text-gray-900">{pkg.price}</span>
+                  <p className="text-sm text-gray-500 mt-1">einmalig</p>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  {pkg.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-sm text-gray-700">
+                      <Check className="h-4 w-4 text-blue-600 mr-3 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button 
+                  onClick={() => scrollToSection('kontakt')}
+                  className={`w-full py-3 transition-colors ${
+                    pkg.popular 
+                      ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                      : 'border-gray-300 hover:bg-gray-50 text-gray-700'
+                  }`}
+                  variant={pkg.popular ? "default" : "outline"}
+                >
+                  Projekt anfragen
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          )
+        })}
       </div>
     </Section>
   )

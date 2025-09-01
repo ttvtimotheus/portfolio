@@ -72,17 +72,54 @@ export function Contact() {
   return (
     <Section 
       id="kontakt"
-      title="Kontakt"
-      subtitle="Lassen Sie uns über Ihr Projekt sprechen"
+      title="Projekt starten"
+      subtitle="Lassen Sie uns gemeinsam Ihre Idee verwirklichen"
     >
-      <div className="max-w-2xl mx-auto">
-        <Card className="shadow-lg">
-          <CardHeader className="text-center">
-            <CardTitle className="flex items-center justify-center space-x-2">
-              <Mail className="h-6 w-6 text-primary" />
-              <span>Projekt anfragen</span>
-            </CardTitle>
-          </CardHeader>
+      <div className="max-w-4xl mx-auto">
+        {/* Trust Badges */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="text-center space-y-2">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+              <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900">Schnelle Umsetzung</h3>
+            <p className="text-sm text-gray-600">Projektstart innerhalb von 48h</p>
+          </div>
+          
+          <div className="text-center space-y-2">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+              <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900">Faire Preise</h3>
+            <p className="text-sm text-gray-600">Transparente Kostenstruktur</p>
+          </div>
+          
+          <div className="text-center space-y-2">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+              <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900">Persönlicher Support</h3>
+            <p className="text-sm text-gray-600">Direkter Kontakt ohne Umwege</p>
+          </div>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
+          <Card className="shadow-lg bg-white border-gray-200">
+            <CardHeader className="text-center">
+              <CardTitle className="flex items-center justify-center space-x-2 text-gray-900">
+                <Mail className="h-6 w-6 text-blue-600" />
+                <span>Projekt starten</span>
+              </CardTitle>
+              <p className="text-gray-600 mt-2">
+                Kostenlose Beratung und unverbindliches Angebot
+              </p>
+            </CardHeader>
 
           <CardContent className="space-y-6">
             {submitResult && (
@@ -218,7 +255,7 @@ export function Contact() {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full"
+                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -228,19 +265,19 @@ export function Contact() {
                   </>
                 ) : (
                   <>
-                    Nachricht senden
+                    Projekt starten
                     <Send className="ml-2 h-4 w-4" />
                   </>
                 )}
               </Button>
             </form>
 
-            <div className="text-center pt-6 border-t">
-              <p className="text-sm text-muted-foreground">
+            <div className="text-center pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-600">
                 Oder kontaktieren Sie mich direkt:{" "}
                 <a 
                   href="mailto:timo@haseloff.dev"
-                  className="text-primary underline hover:no-underline"
+                  className="text-blue-600 underline hover:no-underline"
                 >
                   timo@haseloff.dev
                 </a>
@@ -248,6 +285,7 @@ export function Contact() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
     </Section>
   )

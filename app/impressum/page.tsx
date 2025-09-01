@@ -32,8 +32,8 @@ export default function ImpressumPage() {
               <div className="bg-muted/50 p-6 rounded-lg">
                 <p className="mb-2"><strong>Timo Haseloff</strong></p>
                 <p className="mb-2">Web und Software Development</p>
-                <p className="mb-2">Musterstraße 123</p>
-                <p className="mb-2">12345 Musterstadt</p>
+                <p className="mb-2">Breite Straße 7</p>
+                <p className="mb-2">39288 Burg OT Detershagen</p>
                 <p className="mb-2">Deutschland</p>
               </div>
             </section>
@@ -41,25 +41,17 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Kontakt</h2>
               <div className="bg-muted/50 p-6 rounded-lg">
-                <p className="mb-2"><strong>E-Mail:</strong> timo@haseloff.dev</p>
-                <p className="mb-2"><strong>Telefon:</strong> +49 (0) 123 456789</p>
+                <p className="mb-2"><strong>E-Mail:</strong> info@timo-haseloff.de</p>
+                <p className="mb-2"><strong>Telefon:</strong> +49 (0) 1525 8705975</p>
               </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Umsatzsteuer-ID</h2>
-              <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
-              <p className="font-mono bg-muted/50 px-3 py-1 rounded inline-block mt-2">
-                DE123456789
-              </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">Redaktionell verantwortlich</h2>
               <div className="bg-muted/50 p-6 rounded-lg">
                 <p>Timo Haseloff</p>
-                <p>Musterstraße 123</p>
-                <p>12345 Musterstadt</p>
+                <p>Breite Straße 7</p>
+                <p>39288 Burg OT Detershagen</p>
               </div>
             </section>
 
