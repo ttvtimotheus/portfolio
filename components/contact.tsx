@@ -255,7 +255,7 @@ export function Contact() {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                className="w-full py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -272,12 +272,12 @@ export function Contact() {
               </Button>
             </form>
 
-            <div className="text-center pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-600">
+            <div className="text-center pt-6 border-t border-border">
+              <p className="text-sm text-muted-foreground">
                 Oder kontaktieren Sie mich direkt:{" "}
                 <a 
                   href="mailto:timo@haseloff.dev"
-                  className="text-blue-600 underline hover:no-underline"
+                  className="text-primary underline hover:no-underline"
                 >
                   timo@haseloff.dev
                 </a>

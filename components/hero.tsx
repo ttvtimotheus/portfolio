@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Subtle Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.03),transparent_50%)]" />
       
@@ -24,13 +24,13 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                <span className="block text-gray-900">Timo Haseloff</span>
-                <span className="block text-gray-600 text-4xl lg:text-5xl mt-2">
+                <span className="block text-foreground">Timo Haseloff</span>
+                <span className="block text-muted-foreground text-4xl lg:text-5xl mt-2">
                   Web & Software Development
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
+              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
                 Moderne Webseiten und Apps für kleine Unternehmen und Startups. 
                 Schnell, sauber, zuverlässig.
               </p>
@@ -40,7 +40,7 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection('kontakt')}
-                className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 transition-colors"
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 transition-colors"
               >
                 Projekt starten
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -50,7 +50,7 @@ export function Hero() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('portfolio')}
-                className="text-lg px-8 py-6 border-gray-300 hover:bg-gray-50 transition-colors"
+                className="text-lg px-8 py-6 border-border hover:bg-accent text-foreground transition-colors"
               >
                 Portfolio ansehen
               </Button>
@@ -58,66 +58,73 @@ export function Hero() {
           </div>
 
           {/* Device Mockup */}
-          <div className="relative">
-            <div className="relative bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+          <div className="relative max-w-lg mx-auto">
+            <div className="bg-card rounded-xl shadow-xl border border-border overflow-hidden">
               {/* Browser Header */}
-              <div className="bg-gray-100 h-10 flex items-center px-4 space-x-2 border-b border-gray-200">
+              <div className="bg-muted/50 h-8 flex items-center px-4 space-x-2 border-b border-border">
                 <div className="flex space-x-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 </div>
                 <div className="flex-1 text-center">
-                  <div className="bg-white rounded px-3 py-1 text-xs text-gray-500 max-w-xs mx-auto">
+                  <div className="bg-background rounded px-2 py-0.5 text-xs text-muted-foreground max-w-xs mx-auto">
                     beispiel-projekt.de
                   </div>
                 </div>
               </div>
               
               {/* Website Content */}
-              <div className="p-8 bg-gradient-to-br from-white to-gray-50 min-h-[300px]">
-                <div className="space-y-6">
-                  {/* Header */}
-                  <div className="flex justify-between items-center">
-                    <div className="h-8 bg-blue-600 rounded w-32" />
-                    <div className="flex space-x-2">
-                      <div className="h-6 bg-gray-200 rounded w-16" />
-                      <div className="h-6 bg-gray-200 rounded w-16" />
+              <div className="bg-gradient-to-br from-background to-accent/20 p-6 h-80">
+                <div className="space-y-4">
+                  {/* Navigation */}
+                  <div className="flex justify-between items-center pb-2">
+                    <div className="h-6 bg-primary rounded w-20 flex items-center justify-center">
+                      <div className="text-xs text-white font-medium">Logo</div>
+                    </div>
+                    <div className="flex space-x-3">
+                      <div className="h-4 bg-muted/60 rounded w-12" />
+                      <div className="h-4 bg-muted/60 rounded w-12" />
+                      <div className="h-4 bg-muted/60 rounded w-12" />
                     </div>
                   </div>
                   
-                  {/* Hero Content */}
-                  <div className="space-y-4">
-                    <div className="h-6 bg-gray-800 rounded w-4/5" />
-                    <div className="h-4 bg-gray-400 rounded w-3/5" />
-                    <div className="h-4 bg-gray-400 rounded w-2/3" />
+                  {/* Hero Title */}
+                  <div className="space-y-2 py-4">
+                    <div className="h-6 bg-foreground/20 rounded w-full" />
+                    <div className="h-6 bg-foreground/20 rounded w-4/5" />
+                    <div className="h-3 bg-muted-foreground/30 rounded w-3/5 mt-3" />
                   </div>
                   
-                  {/* Cards */}
-                  <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-2 bg-gray-200 rounded w-full" />
-                      <div className="h-2 bg-gray-200 rounded w-2/3" />
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-2 bg-gray-200 rounded w-full" />
-                      <div className="h-2 bg-gray-200 rounded w-2/3" />
+                  {/* CTA Button */}
+                  <div className="pt-2">
+                    <div className="h-10 bg-primary rounded-lg w-32 flex items-center justify-center">
+                      <div className="text-xs text-white font-medium">Jetzt starten</div>
                     </div>
                   </div>
                   
-                  {/* CTA Buttons */}
-                  <div className="flex space-x-3 mt-6">
-                    <div className="h-8 bg-blue-600 rounded w-24" />
-                    <div className="h-8 bg-gray-200 rounded w-20" />
+                  {/* Feature Cards */}
+                  <div className="grid grid-cols-2 gap-3 pt-4">
+                    <div className="bg-card/80 border border-border/50 rounded-lg p-3 space-y-2">
+                      <div className="h-4 bg-primary/20 rounded w-2/3" />
+                      <div className="h-2 bg-muted/60 rounded w-full" />
+                      <div className="h-2 bg-muted/60 rounded w-4/5" />
+                    </div>
+                    <div className="bg-card/80 border border-border/50 rounded-lg p-3 space-y-2">
+                      <div className="h-4 bg-primary/20 rounded w-2/3" />
+                      <div className="h-2 bg-muted/60 rounded w-full" />
+                      <div className="h-2 bg-muted/60 rounded w-4/5" />
+                    </div>
+                  </div>
+                  
+                  {/* Tech Stack */}
+                  <div className="flex gap-2 pt-2">
+                    <div className="px-2 py-1 bg-primary/10 rounded text-xs text-primary font-medium">Next.js</div>
+                    <div className="px-2 py-1 bg-primary/10 rounded text-xs text-primary font-medium">React</div>
                   </div>
                 </div>
               </div>
             </div>
-            
-            {/* Subtle glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-100/0 via-blue-100/50 to-blue-100/0 rounded-3xl -z-10 blur-xl opacity-60" />
           </div>
         </div>
       </div>

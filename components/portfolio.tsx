@@ -48,15 +48,15 @@ export function Portfolio() {
         {featuredProjects.map((project) => (
           <Card 
             key={project.title}
-            className="group relative overflow-hidden border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
+            className="group relative overflow-hidden border-border shadow-sm transition-all duration-300 hover:shadow-md"
           >
-            <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-gray-50">
+            <div className="relative aspect-video bg-gradient-to-br from-muted/30 to-muted/10">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center space-y-2">
-                  <div className="w-16 h-16 mx-auto rounded-lg bg-blue-100 flex items-center justify-center">
-                    <Globe className="h-8 w-8 text-blue-600" />
+                  <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Globe className="h-8 w-8 text-primary" />
                   </div>
-                  <p className="text-sm text-gray-500">Demo Screenshot</p>
+                  <p className="text-sm text-muted-foreground">Demo Screenshot</p>
                 </div>
               </div>
             </div>
@@ -65,13 +65,13 @@ export function Portfolio() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md">
+                    <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
                       {project.category}
                     </span>
-                    <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
-                  <h3 className="font-semibold text-lg text-gray-900">{project.title}</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">
+                  <h3 className="font-semibold text-lg text-foreground">{project.title}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {project.description}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export function Portfolio() {
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
-                      className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
+                      className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded"
                     >
                       {tech}
                     </span>
@@ -90,7 +90,7 @@ export function Portfolio() {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="w-full border-gray-300 hover:bg-gray-50 text-gray-700"
+                  className="w-full border-border hover:bg-accent text-foreground"
                   asChild
                 >
                   <a href={project.link} target="_blank" rel="noopener noreferrer">

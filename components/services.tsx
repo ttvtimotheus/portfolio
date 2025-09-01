@@ -63,25 +63,25 @@ export function Services() {
           return (
             <Card 
               key={pkg.name}
-              className="relative overflow-hidden border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
+              className="relative overflow-hidden border-border shadow-sm transition-all duration-300 hover:shadow-md"
             >
               <CardHeader className="text-center pb-2 px-8 pt-8">
-                <div className="mx-auto w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <Icon className="h-6 w-6 text-blue-600" />
+                <div className="mx-auto w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                  <Icon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl text-gray-900">{pkg.name}</CardTitle>
-                <p className="text-sm text-gray-600 mt-2">{pkg.description}</p>
+                <CardTitle className="text-xl text-foreground">{pkg.name}</CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">{pkg.description}</p>
               </CardHeader>
               <CardContent className="pt-0 pb-8 px-8">
                 <div className="text-center mb-8">
-                  <span className="text-3xl font-bold text-gray-900">{pkg.price}</span>
-                  <p className="text-sm text-gray-500 mt-1">einmalig</p>
+                  <span className="text-3xl font-bold text-foreground">{pkg.price}</span>
+                  <p className="text-sm text-muted-foreground mt-1">einmalig</p>
                 </div>
                 
                 <ul className="space-y-4 mb-8">
                   {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-gray-700">
-                      <Check className="h-4 w-4 text-blue-600 mr-3 flex-shrink-0" />
+                    <li key={feature} className="flex items-center text-sm text-foreground">
+                      <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -91,8 +91,8 @@ export function Services() {
                   onClick={() => scrollToSection('kontakt')}
                   className={`w-full py-3 transition-colors ${
                     pkg.popular 
-                      ? 'bg-blue-600 hover:bg-blue-700 text-white' 
-                      : 'border-gray-300 hover:bg-gray-50 text-gray-700'
+                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
+                      : 'border-border hover:bg-accent text-foreground'
                   }`}
                   variant={pkg.popular ? "default" : "outline"}
                 >
